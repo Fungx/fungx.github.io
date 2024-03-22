@@ -1,9 +1,10 @@
 ---
 title: Go中的接口型函数
 date: 2024-03-22 22:56:00 +0800
-categories: [Programing Language, Golang]
-tags: [golang, design pattern]     # TAG names should always be lowercase
+categories: [Programming Language, Golang]
+tags: [golang, design patterns]     # TAG names should always be lowercase
 ---
+
 在Go中，函数也可以作为方法的接收者。也就是说，假如`f`是一个函数，`m`是一个以`f`为接收者的方法，我们可以调用`f.m()`.代码如下所示：
 ```go
 type F func()
