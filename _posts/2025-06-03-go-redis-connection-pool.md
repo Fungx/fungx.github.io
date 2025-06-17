@@ -336,7 +336,7 @@ func (p *ConnPool) Get(ctx context.Context) (*Conn, error) {
 ## 释放
 连接使用结束后，会通过 `(*ConnPool).Put` 释放连接。
 
-释放连接的核心 `p.Remove` 函数依次做了3件事：从连接池中删除连接、从`p.queue`取出token、关闭当前连接、。
+释放连接的核心 `p.Remove` 函数依次做了3件事：从连接池中删除连接、从`p.queue`取出token、关闭当前连接。
 
 首先，如果连接状态异常，或原先不在连接池中，则会调用 `p.Remove` 进行释放。而对于正常使用完成的连接，如果连接池有空闲，则放回连接池。
 
