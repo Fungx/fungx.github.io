@@ -131,7 +131,7 @@ func main() {
 
 这是执行 `NewConnPool` 前的调用栈。
 
-![alt text](/assets/lib/2025-06-03-go-redis-connection-pool/stack.png)
+![alt text](/assets/go-redis-connection-pool/stack.png)
 
 可以看到，连接池初始化的大致流程如下
 1. `client` 调用 redis 命令，需要在 `(*ClusterClient).process` 里先计算当前操作 key 对应的 `slot`，并根据 `slot` 通过 `c.cmdNode` 获取 `clusterNode`.
@@ -435,7 +435,7 @@ issue 中描述的场景如下图所示。他们通过 一个 HostName 作为集
 FIFO 则可以让每个连接都有平等的机会被使用，在这种场景下依然能够保证负载均衡。
 
 
-![redis 集群](/assets/lib/2025-06-03-go-redis-connection-pool/redis-cluster.png)
+![redis 集群](/assets/go-redis-connection-pool/redis-cluster.png)
 
 另外，FILO 除了解决负载均衡的问题外，与 FIFO 也有一些适用场景的区别
  
