@@ -1,5 +1,5 @@
 ---
-title: System Design Interview 笔记——1.邻近服务
+title: 【未完成】System Design Interview 笔记——1.邻近服务
 date: 2025-06-18 01:51:00 +0800
 categories: [Golang]
 tags: [system design]     # TAG names should always be lowercase
@@ -133,5 +133,17 @@ AND (longitude BETWEEN {:my_long} - radius AND {:my_long} + radius)
 
 由此可以引出另一个思路：能否将二维的数据映射到一维？
 
-下图展示了是 2 类地理空间信息的索引方式。
+下图展示了是 2 类地理空间信息的索引方式。他们的核心思想都是一样的：**把地图划分为更小的区域，构建索引来快速搜索。**
 ![alt text](/assets/system-design-interview/geo-indexes.png)
+
+
+#### 均分格子
+一种简单的方法是把世界均分为相等大小的格子，每个格子都包含多个商家，每个商家都属于一个格子。
+但是，商家的分布不是均匀的。大城市的商家更多，而大洋某个位置上却不会有商家。这种方式产生了非常不均匀的数据分布。
+
+> 数据不均匀会有什么问题？
+> 
+> 负载不均：大城市商区的商家密度更高，人流也更多。意味着热点格子需要承担更多的请求，大量的请求都会打到一个分区上，产生热点问题。
+
+#### Geohash
+
