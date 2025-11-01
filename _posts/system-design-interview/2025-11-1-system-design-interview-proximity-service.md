@@ -1,6 +1,6 @@
 ---
 title: System Design Interview 笔记——1.邻近服务
-date: 2025-06-18 01:51:00 +0800
+date: 2025-11-1 21:00:00 +0800
 categories: [System Design Interview 笔记]
 tags: [system design]     # TAG names should always be lowercase
 math: true
