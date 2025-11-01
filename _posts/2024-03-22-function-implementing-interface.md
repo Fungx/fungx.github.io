@@ -1,7 +1,6 @@
 ---
 title: Go中的接口型函数
 date: 2024-03-22 22:56:00 +0800
-categories: [Programming Language, Golang]
 tags: [golang, design patterns]     # TAG names should always be lowercase
 ---
 
